@@ -6,7 +6,8 @@ import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 import { useInView } from 'react-intersection-observer';
 import { useState } from "react";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Mousewheel, Pagination } from "swiper";
 
 export default function Home({postsPagination}) {
   
@@ -37,44 +38,87 @@ export default function Home({postsPagination}) {
 
   return (
     <>
-      
-      <Header />
-      <main className={styles.container}>
-        <article className={styles.container_main}>
-            <div>
-              <h1>Apoiando você, <b>sempre</b></h1>
-            </div>
-            
-            <div>
-              <h3>Soluções completas em seguros para pesquisas clínicas</h3>
-              <p>Tudo que você precisa dominar seguros para o setor de pesquisas clínicas. <br/></p>
-              <p>Destaque-se em ambientes competitivos, blindar seu negócio e   alavancar seu sucesso profissional.</p>
-            </div>
-        </article>
 
+      {/* <Header /> */}
+      <main className={styles.swiper_container}>
+    
+        <div className={styles.swiper_wrapper}>
+        <Swiper
+          direction={"vertical"}
+          slidesPerView={1}
+          spaceBetween={30}
+          mousewheel={true}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Mousewheel, Pagination]}
+          > 
 
-        <section ref={postsRef} className={styles.container_posts}>
-        <h2 className={styles.title_articles}>{postsVisible ? 'Artigo Visivel' : 'Artigo não visivel'}</h2>
-          <article className={styles.posts}>
-            {posts.map(post => (
-              <article key={post.uid} className={styles.post}>
-                <div>
-                    <h3>{post.data.title}</h3>
-                    <p>{post.first_publication_date}</p>
+          <SwiperSlide className={styles.swiper_slide}>
+            <div className={`${styles.air_pods} ${styles.sections}`}>
+                <div className={styles.section_container}>
+                <div className={styles.image}>
+                  <img src="/images/airpods-pro.png" alt="air pods" />
                 </div>
-                <div>
-                    <button>Ver artigo</button>
+                <div className={styles.text}>
+                  <p className={styles.title}>Airpods</p>    
+                  <p className={styles.description}>
+                  AirPods will forever change the way you use headphones. Whenever you pull your AirPods out of the charging case, they instantly turn on and connect to your iPhone, Apple Watch, iPad, or Mac
+                  </p>
                 </div>
-              </article>
-            ))}
-          </article>
-          {nextPage && (
-            <div className={styles.button_more_posts}>
-              <button onClick={()=>handlePagination()}>Ver mais</button>
+                </div>
             </div>
-          )}
-        </section>
-        
+          </SwiperSlide>
+
+          <SwiperSlide className={styles.swiper_slide}>
+            <div className={`${styles.beats} ${styles.sections}`}>
+                <div className={styles.section_container}>
+                    <div className={styles.image}>
+                      <img src="/images/blue.png" alt="beats" />
+                    </div>
+                    <div className={styles.text}>
+                      <p className={styles.title}>Beats</p>
+                      <p className={styles.description}>
+                      Dre (Beats) is a leading audio brand founded in 2006 by Dr. Dre and Jimmy Iovine. Through its family of premium consumer headphones, earphones and speakers, Beats has introduced an entirely new generation to the possibilities of premium sound entertainment
+                      </p>
+                    </div>
+                </div>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide className={styles.swiper_slide}>
+            <div className={`${styles.apple_watch} ${styles.sections}`}>
+                <div className={styles.section_container}>
+                    <div className={styles.image}>
+                      <img src="/images/apple_watch_series_6_gps_44mm_blue_aluminum_deep_navy_sport_band_34r_print__usen.png" alt="beats" />
+                    </div>
+                    <div className={styles.text}>
+                      <p className={styles.title}>Apple Watch 6 </p>
+                      <p className={styles.description}>
+                      Apple Watch Series 6 offers faster charging, completing a full charge in under 1.5 hours, and improved battery life for tracking certain workouts
+                      </p>
+                    </div>
+                </div>
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide className={styles.swiper_slide}>
+            <div className={`${styles.galaxy_buds} ${styles.sections}`}>
+                <div className={styles.section_container}>
+                  <div className={styles.image}>
+                    <img src="/images/samsung_galaxy_buds_pro_610x610.png" alt="beats" />
+                  </div>
+                  <div className={styles.text}>
+                    <p className={styles.title}>SAMSUNG Galaxy Buds <span>PRO</span> </p>
+                    <p className={styles.description}>
+                    Galaxy Buds Pro offer the best call quality from our buds yet, so you can feel confident you're connected and heard, no matter where you are
+                    </p>
+                  </div>
+                </div>
+            </div>
+          </SwiperSlide>
+      </Swiper>
+        </div>
       </main>
     </>
   )

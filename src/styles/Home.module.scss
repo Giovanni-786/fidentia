@@ -1,240 +1,133 @@
-.container{
-    margin: 0 auto;
-    max-width: 1500px;
-    height: 100vh;
-    // background: url('/images/backgroundMain.png') 0 0 repeat;
-    
-    
-}
 
-.container_main{
-    max-width: 1200px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 0 auto;
-    margin-top: 8rem;
-    min-height: 100vh;
-    justify-content: center;
-    div:nth-child(1){
-        text-align: center;
-        align-items: center;
-        height: 1rem;
-        h1{
-            font-size: 6rem;
-            
-            b{
-                color: var(--blue-200);
-            }
-        }
-    }
-    div:nth-child(2){
-        text-align: center;
-        align-items: center;
-        h3{
-            font-weight: 400;
-            font-size: 2rem;
-        }
-        p{
-            margin-top: 0.9rem;
-            font-size: 1rem;
-            font-weight: 400;
-        }
-    }
-   
-}
-
-.posts{
-  transition: all 2s ease-in-out;
-    margin: 0 auto;
-    max-width: 1200px;
-    margin-top: 10vh;
-    justify-content: center;
-    display: grid;
-    gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.animation_posts{
-    animation-duration: 5s;
-    animation-name: animate-rocket;
-}
-
-.title_articles {
-    // display: inline-block;
-    font-size: 2rem;
-    margin-top: 2rem;
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
     text-align: center;
-}
-
-.post{
+    font-size: 18px;
+    background: #fff;
+  
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 15rem;
-    padding: 1rem;
-    height: 15rem;
-    border-radius: 16px;
-    font-size: 0.9rem;
-    background: var(--yellow-200);
-    button {
-        font-size: 0.8rem;
-        color: black;
-        border-radius: 15px;
-        border-style: none;
-        width: 5rem;
-        background-color: var(--white);
-        height: 2rem;
-    }
-}
-
-.button_more_posts{
-    margin: 20px auto;
-    align-self: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
     justify-content: center;
-    text-align: center;
-    
-    button{
-        font-size: 1.2rem;
-        color: black;
-        border-style: none;
-        border-radius: 10px;
-        border: 1px solid black;
-        width: 7rem;
-        background-color: var(--white);
-        height: 2rem;
-    }      
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  
+
+.sections {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@keyframes animate-rocket {
-    0%{
-        transform: scale(1) rotate(10deg);
-    }
-    5%{
-        transform: scale(1.25) rotate(-15deg);
-    }
-    10%{
-        transform: scale(1.5) rotate(5deg);
-    }
-    15%{
-        transform: scale(1.75) rotate(-10deg);
-    }
-    20%{
-        transform: scale(2) rotate(0);
-    }
-    100%{
-        transform: scale(20) translate3D(100vw, -100vh, 0) rotate(0);
-    }
+.air_pods,
+.beats,
+.apple_watch,
+.galaxy_buds{
+    width: 100%;
+    height: 100vh;
+    padding: 0 80px;
 }
 
-@media (max-width: 650px) {
-    .container_main{
-        justify-items: center;
-        grid-template-columns: 1fr;
-        gap:  5rem;
-        padding: 2rem;
-    }
-    .posts{
-        justify-items: center;
-        grid-template-columns: 1fr;
-    }
+.section_container{
+    max-width: 1170px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.air_pods{
+    background-color: #1C1C1C;
+ }
+
+.beats{
+    background-color: #fff;
+}
+
+.apple_watch{
+    background-color: #92B7FF;
+}
+
+.galaxy_buds{
+    background-color: #000;
 }
 
 
-/* 
-  ##Device = Desktops
-  ##Screen = 1281px to higher resolution desktops
-*/
+.image{
+    width: 200px;
+    height: 200px;
+}
 
-@media (min-width: 1281px) {
-  
-    /* CSS */
-    
-  }
-  
-  /* 
-    ##Device = Laptops, Desktops
-    ##Screen = B/w 1025px to 1280px
-  */
-  
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    
-    /* CSS */
-    .container_main{
-        justify-content: center;
-        justify-items: center;
-        grid-template-columns: 1fr;
+.image {
+    img{
+        width: 100%;
     }
-    
-  }
-  
-  /* 
-    ##Device = Tablets, Ipads (portrait)
-    ##Screen = B/w 768px to 1024px
-  */
-  
-  @media (min-width: 768px) and (max-width: 1024px) {
-    
-    /* CSS */
-    .container_main{
-        justify-content: center;
-        justify-items: center;
-        grid-template-columns: 1fr;
+}
+
+.text{
+    width: 350px;
+}
+
+
+.text{
+    .title{
+        font-size: 82px;
+        font-weight: 100;
+        margin-bottom: 50px;
     }
-    
-  }
-  
-  /* 
-    ##Device = Tablets, Ipads (landscape)
-    ##Screen = B/w 768px to 1024px
-  */
-  
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    
-    /* CSS */
-    .container_main{
-        justify-content: center;
-        justify-items: center;
-        grid-template-columns: 1fr;
+}
+
+.air_pods{
+    .text{
+        color: #fff;
     }
-    
-  }
-  
-  /* 
-    ##Device = Low Resolution Tablets, Mobiles (Landscape)
-    ##Screen = B/w 481px to 767px
-  */
-  
-  @media (min-width: 481px) and (max-width: 767px) {
-    
-    /* CSS */
-    .container_main{
-        justify-content: center;
-        justify-items: center;
-        grid-template-columns: 1fr;
-        div:nth-child(1){
-            h1{
-                font-size: 4rem;
+}
+
+.text{
+    .description{
+        font-size: 18px;
+        font-weight: 100;
+    }
+}
+
+.beats{
+    img{
+        margin-left: 300px;
+        order: 2;
+        width: 550px;
+    }
+}
+
+.beats {
+    .text{
+        color: #000;
+    }
+}
+
+.galaxy_buds{
+    .text{
+        .title{
+            font-size: 45px;
+            span{
+                font-weight: 400;
             }
         }
-        
     }
-    
-  }
-  
-  /* 
-    ##Device = Most of the Smartphones Mobiles (Portrait)
-    ##Screen = B/w 320px to 479px
-  */
-  
-  @media (min-width: 320px) and (max-width: 480px) {
-    
-    .container_main{
-        div:nth-child(1){
-            h1{
-                font-size: 3.8rem;
-            }
-        }
-        
+}
+
+.galaxy_buds{
+    .text{
+     color: #fff;   
     }
-    
-  }
+}
