@@ -43,7 +43,7 @@ export default function Header(){
                 <Link href="/#home">
                     <li className={activeHover && styles.hoverActive} >início</li>
                 </Link>
-                <Link href="/#solucoes">
+                <Link href="/insurance">
                     <li onMouseEnter={() => setActiveHover(false) } onMouseLeave={() => setActiveHover(true) } >soluções</li>
                 </Link>
                 

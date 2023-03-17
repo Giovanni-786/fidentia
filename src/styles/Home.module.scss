@@ -43,12 +43,13 @@
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
-    margin-top: 10rem;
-
+    margin-top: 5rem;
+    
     .contentWrapper{
       display: flex;
+      flex-direction: row;
+      align-items: center;
       justify-content: center;
-      margin-top: 80px;
     }
     .title {
       position: relative;
@@ -143,10 +144,12 @@
       }
     }
     .cards {
+      max-width: 1200px;
       display: flex;
       justify-content: center;
       margin: 0 auto;
-      gap: 10rem;
+      gap: 35px;
+      margin-bottom: 2.5rem;
       .card {
         box-sizing: border-box;
         padding: 2rem;
@@ -332,10 +335,10 @@
     .cards {
       align-self: center;
       display: flex;
-      gap: 1rem;
-      cursor: grab;
+      
       overflow: hidden;
       .card {
+        cursor: grab;
         width: 30rem;
         height: 30.68rem;
         border: 0.5px solid rgba(22, 5, 68, 0.15);
@@ -771,6 +774,21 @@
     .content {
       gap: 5rem;
       grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media (max-width: 940px) {
+  .section1{
+    .content{
+      .contentWrapper{
+        flex-direction: column;
+        .subtitle{
+          margin-left: 0;
+          margin-top: 20px;
+          margin-right: auto;
+        }
+      }
     }
   }
 }

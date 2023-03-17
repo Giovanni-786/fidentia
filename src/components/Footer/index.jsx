@@ -32,7 +32,7 @@ export const Footer = ({pageRef, visibleState, section2, section5, section6, sec
         <div>
           <h2>A Fidentia</h2>
           <div className={styles.border}></div>
-          <Link href="/#solucoes" onClick={() => scrollTo(section2)}>
+          <Link href="/insurance">
             Soluções
           </Link>
           <Link href="/fidentia" onClick={() => scrollTo(section6)}>

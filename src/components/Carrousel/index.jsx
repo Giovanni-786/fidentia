@@ -43,6 +43,7 @@ export default function Carrousel(){
       }
     return(
         <Carousel 
+          itemPadding={[0, 20]}
           itemsToShow={itemsPerPage} 
           breakPoints={breakPoints} 
           renderArrow={myArrow}

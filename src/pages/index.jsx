@@ -119,6 +119,7 @@ export default function Home({ postsPagination }) {
           console.log(data);
           const formattedData = data.results.map((post) => {
             return {
+              key: post.uid,
               uid: post.uid,
               first_publication_date: format(
                 new Date(post.first_publication_date),
@@ -185,7 +186,6 @@ export default function Home({ postsPagination }) {
       </Head>
       <main className={`container ${styles.container}`}>
         <section className={styles.section1} id="home" ref={section1}>
-          <Header />
           <Image
             src={`${
               mobileWidth
@@ -196,6 +196,7 @@ export default function Home({ postsPagination }) {
             priority={true}
             alt="Imagem ilustrativa de fundo para primeira seção"
           />
+          <Header />
           <div className={`${styles.content} ${styles.fade}`} ref={sectionOne}>
             <div className={styles.contentWrapper}>
               <div className={styles.title}>
@@ -573,6 +574,7 @@ export async function getStaticProps() {
 
   const posts = postsResponse.results.map((post) => {
     return {
+      key: post.uid,
       uid: post.uid,
       first_publication_date: format(
         new Date(post.first_publication_date),

@@ -2,14 +2,15 @@ import styles from "./styles.module.scss";
 import { useEffect, useRef, useState } from "react";
 import Carousel, { consts } from "react-elastic-carousel";
 
-export default function CarrouselText({arrayContent}) {
+export default function CarrouselText({ arrayContent }) {
   const carouselRef = useRef(null);
-  const [itemsPerPage, setItemsPerPage] = useState(3);
+  const [itemsPerPage, setItemsPerPage] = useState(2);
+
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 820) {
+      if (window.innerWidth < 1060) {
         setItemsPerPage(1);
-      }else {
+      } else {
         setItemsPerPage(2);
       }
     };
@@ -23,69 +24,40 @@ export default function CarrouselText({arrayContent}) {
     };
   }, []);
 
-  const breakPoints = [
-    { width: 500, itemsToShow: 1 },
-    { width: 500, itemsToShow: 2 },
-    { width: 1200, itemsToShow: 3 },
-    { width: 1500, itemsToShow: 3 },
-    { width: 1800, itemsToShow: 3 },
-  ];
-
   const myArrow = ({ type, onClick, isEdge }) => {
-    const pointer =
-      type === consts.PREV ? (
-        <img
-          src="/images/arrowLeft.png"
-          className={styles.arrowIcon}
-          alt="Ícone de seta para esquerda"
-        />
-      ) : (
-        <img
-          src="/images/arrowRight.png"
-          className={styles.arrowIcon}
-          alt="Ícone de seta para direita"
-        />
-      );
+    const pointer = type === consts.PREV ? <img src="/images/arrowLeft.png" className={styles.arrowIcon} alt="Ícone de seta para esquerda" /> : <img src="/images/arrowRight.png" className={styles.arrowIcon} alt="Ícone de seta para direita"/>
     return (
-      <button
-        onClick={onClick}
-        disabled={isEdge}
-      >
+      <button onClick={onClick} disabled={isEdge} className={styles.button_pagination}>
         {pointer}
       </button>
-    );
-  };
+    )
+  }
   return (
-    <Carousel
+      <Carousel
+      renderArrow={myArrow}
       ref={carouselRef}
       itemsToShow={itemsPerPage}
-      breakPoints={breakPoints}
-      showArrows={false}
+      showArrows
       className={styles.container}
+      showEmptySlots={false}
       enableAutoPlay
       autoPlaySpeed={5000}
-      onNextEnd={({ index }) => {
-        const totalPages = Math.ceil(arrayContent.length / itemsPerPage);
-        let resetTimeout;
-
-        clearTimeout(resetTimeout);
-        resetTimeout = setTimeout(() => {
-          if (index === totalPages) {
-            carouselRef.current?.goTo(0);
-          } else carouselRef.current?.goTo(index + 1);
-        }, 5000);
-      }}
     >
       {arrayContent.map((content) => (
-        
-          <div className={styles.deposition} key={content.title}>
-            <div className={styles.info}>
-            <article className={styles.text}>
-              <h3>{content.title}</h3>
-              <p>{content.description}</p>
-            </article>
-            </div>
+        <div className={styles.deposition} key={content.name}>
+          <div className={styles.title}>
+            <h3>{content.title}</h3>
           </div>
+          <div className={styles.info}>
+            <article className={styles.text}>
+              <p>{content.description ?? ""}</p>
+              <p>{content.description1 ?? ""}</p>
+              <p>{content.description2 ?? ""}</p>
+              <p>{content.description3 ?? ""}</p>
+              <p>{content.description4 ?? ""}</p>
+            </article>
+          </div>
+        </div>
       ))}
     </Carousel>
   );

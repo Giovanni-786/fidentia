@@ -1,152 +1,202 @@
-
-.marginBottom{
-    margin-bottom: 20px;
+.main {
+   width: 100%;
 }
+
+.background_image{}
 
 .container{
-    .title{
-        display: flex;
-        justify-content: center;
-        font-size: 3.6rem;
-        color: var(--purple-800);
-        font-weight: 500;
-    }
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    padding-top: 20px;
-    background: var(--wh);
-    .subContainer{
+    position: relative; 
+    overflow-x: hidden;
+    @media (max-width: 1100px) {
+        .container{
+            width: 120vw;
+        }
+    }
+
+}
+
+.header{
+    position: relative;
+    width: 100%;
+    padding: 3rem 5.9rem 0 8.2rem;
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+    h2{
+        font-size: 3.25rem;
+        font-weight: 700;
+        line-height: 63px;
+        color: var(--purple-800);
+    }
+    img{
+        width: 4.0rem;
+    }
+}
+.title_main{
+    position: relative;
+    margin-left: 82px;
+    h2{
+        font-size: 3.25rem;
+        font-weight: 700;
+        line-height: 63px;
+        color: var(--purple-800);
+    }
+    
+}
+
+.container_content {
+    position: relative;
+    margin-top: 32px;
+}
+@media (max-width: 1100px) {
+    .container{
         width: 100%;
-        height: 91%;
-        overflow-y:scroll;
-        overflow-x: hidden;
-        /* ===== Scrollbar CSS ===== */
-        /* Firefox */
-        scrollbar-width: auto;
-        scrollbar-color:  #9f9d98 #d4d2cb;
-        -moz-filter: initial;
-        -o-filter: initial;
-        -webkit-filter:initial;
-        filter: initial;
-        
-
-        .subTitle{
-            display: flex;
-            gap: 50px;
-            margin-bottom: 50px; 
-            h3{
-                font-size: 2.3rem; 
-            }
-
-        }
-        >div{
-            width: 80%;
-            margin: auto;
-        }
-        h3, p{
-            color: var(--purple-800);
-            font-size: 1.5rem; 
-        }
-
-        h3{
-            font-weight: 600;
-            margin-bottom: 30px;
-        }
-        /* Chrome, Edge, and Safari */
-        &::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        &::-webkit-scrollbar-track {
-            background: #d4d2cb;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background-color:  #9f9d98;
-            border-radius: 10px;
-            border: 3px solid #9f9d98;
-            height: 1px;
-        }
     }
-    .post{
-        position: relative;
-        text-align: center;
-        height: 100%;
-        max-width: 1200px;
-        margin: 0 auto;       
+}
 
+@media (max-width: 800px) {
+    .header{
+        display: flex;
         h2{
+            font-size: 2.25rem;
+            font-weight: 700;
+            line-height: 63px;
             color: var(--purple-800);
-            font-size: 3.75rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
         }
-        .content{
-            
-            margin-top: 4rem;
-            h2{
-                font-size: 1.8rem;
+        figure{
+            img{
+                width: 50px;
             }
-            .title{
-                width: 75rem;
-                margin-bottom: 2rem;
-                h1{
-                    text-align: left;
-                    color: var(--purple-800);
-                    font-weight: 600;
-                    font-size: 3.2rem;
-                }
-            }
-            .banner{
-                width: 100%; 
-
-                img{
-                    width: 68rem;
-                    height: 21rem;
-                    position: absolute;
-                    right: 0;
-                    left: 0;
-                    border-radius: 1.375rem
-                }
-            }
-        }
-    }
-
-.container_arrow_back{
-
-    text-align: right;
-    margin-right: 2rem;
-    button{
-        border: 0;
-        background: none;
-        img{
-            width: 40px;
-            height: 40px;
         }
     }
 }
 
-@media (max-width: 425px) {
-    padding: 40px 0 0;
-
-    .title{
-        padding: 3rem;
-        font-size: 2.6rem;
-    }
-
-    .subTitle{
-        flex-direction: column;
-
-        h3{
-            font-size: 2rem !important;
-        }
-
-        figure img{
-            margin-top: 50px;
-            width:100%;
+@media (max-width: 625px) {
+    .header{
+        padding: 6rem 5.9rem 0 6.8rem;
+        h2{
+            font-size: 2rem;
+            line-height: 40px;
         }
     }
 }
 
+@media (max-width: 554px) {
+    .header{
+        padding: 6rem 5.9rem 0 6rem;
+        h2{
+            font-size: 2rem;
+            line-height: 40px;
+        }
+    }
 }
+
+@media (max-width: 510px) {
+    .header{
+        padding: 6rem 5.9rem 0 5.5rem;
+        h2{
+            font-size: 1.6rem;
+            line-height: 30px;
+        }
+    }
+}
+
+@media (max-width: 465px) {
+    .header{
+        padding: 6rem 5.9rem 0 5.1rem;
+        figure{
+            img{
+                width: 35px;
+            }
+        }
+        
+    }
+}
+
+@media (max-width: 420px) {
+    .header{
+
+        padding: 6rem 5.9rem 0 5.7rem;
+        
+    }
+}
+
+@media (max-width: 400px) {
+    .header{
+        padding: 6rem 5.9rem 0 5rem;
+        figure{
+            img{
+                width: 36px;
+            }
+        }
+        
+    }
+}
+
+@media (max-width: 340px) {
+    .header{
+        padding: 6rem 5.9rem 0 3.7rem;
+        figure{
+            img{
+                width: 36px;
+            }
+        }
+        
+    }
+}
+
+// @media (max-width: 750px) {
+//     .container{
+//         width: 150vw;
+//     }
+// }
+
+
+// @media (max-width: 660px) {
+//     .container{
+//         width: 155vw;
+//     }
+// }
+
+// @media (max-width: 630px) {
+//     .container{
+//         width: 165vw;
+//     }
+// }
+
+// @media (max-width: 597px) {
+//     .container{
+//         width: 170vw;
+//     }
+// }
+
+// @media (max-width: 579px) {
+//     .container{
+//         width: 180vw;
+//     }
+// }
+
+// @media (max-width: 543px) {
+//     .container{
+//         width: 185vw;
+//     }
+// }
+
+// @media (max-width: 535px) {
+//     .container{
+//         width: 190vw;
+//     }
+// }
+
+// @media (max-width: 513px) {
+//     .container{
+//         width: 195vw;
+//     }
+// }
+
+// @media (max-width: 505px) {
+//     .container{
+//         width: 200vw;
+//     }
+// }

@@ -109,17 +109,6 @@ export default function CarrouselDepoiments() {
       className={styles.container}
       enableAutoPlay
       autoPlaySpeed={5000}
-      onNextEnd={({ index }) => {
-        const totalPages = Math.ceil(depoiments.length / itemsPerPage);
-        let resetTimeout;
-
-        clearTimeout(resetTimeout);
-        resetTimeout = setTimeout(() => {
-          if (index === totalPages) {
-            carouselRef.current?.goTo(0);
-          } else carouselRef.current?.goTo(index + 1);
-        }, 5000);
-      }}
     >
       {depoiments.map((depoiment) => (
         <div className={styles.deposition} key={depoiment.name}>
